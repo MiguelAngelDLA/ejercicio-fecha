@@ -68,24 +68,29 @@ public class Fecha {
     
     public int diasTranscurridos(){
 
-        int añosTranscurridos, diasTranscurridos, diasAño;
+        int añosTranscurridos, diasTranscurridos;
 
-        diasAño = 0;
+        diasTranscurridos = 0;
 
         añosTranscurridos = (getAño() - 1) - 1900;
 
         for(int i = 0; i <= añosTranscurridos; i++){
 
             if(isAñoBisiesto(i)){
-                diasAño = diasAño + 366;
+                diasTranscurridos = diasTranscurridos + 366;
             }
-            else diasAño = diasAño + 365;
+            else diasTranscurridos = diasTranscurridos + 365;
         }
 
-        diasTranscurridos = diasAño;
+        for(int i = 0; i < (getMes()-1); i++){
+            diasTranscurridos = diasTranscurridos + diasMes(i);
+        }
+
+        for(int i = 0; i < getDia(); i++){
+            diasTranscurridos++;
+        }
 
         return diasTranscurridos;
-
     }
     
     public boolean bisiesto(){

@@ -100,6 +100,42 @@ public class Fecha {
         return isBisiesto;
     } 
 
+    public void larga(){
+        String mesString;
+        int mes;
+        mes = getMes();
+
+        switch(mes){
+            case 1: mesString = "ENERO"; break;
+
+            case 2: mesString = "FEBRERO"; break;
+
+            case 3: mesString = "MARZO"; break;
+
+            case 4: mesString = "ABRIL"; break;
+
+            case 5: mesString = "MAYO"; break;
+
+            case 6: mesString = "JUNIO"; break;
+
+            case 7: mesString = "JULIO"; break;
+
+            case 8: mesString = "AGOSTO"; break;
+
+            case 9: mesString = "SEPTIEMBRE"; break;
+
+            case 10: mesString = "OCTUBRE"; break;
+
+            case 11: mesString = "NOVIEMBRE"; break;
+
+            case 12: mesString = "DICIEMBRE"; break;
+
+            default: mesString = "No valido"; break;
+        }
+
+        System.out.println(getDia() + " de " + mesString + " de " + getAño());
+    }
+
     public boolean isAñoBisiesto(int año){
 
         return año % 4 == 0 ? true : false;

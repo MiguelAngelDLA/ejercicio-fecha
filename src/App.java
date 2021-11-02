@@ -3,6 +3,6 @@ public class App {
 
         Fecha fecha = new Fecha(10, 2, 1901);
 
-        System.out.print(fecha.diasTranscurridos());
+        fecha.larga();
     }
 }

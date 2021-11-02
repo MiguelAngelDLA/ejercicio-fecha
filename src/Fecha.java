@@ -63,7 +63,30 @@ public class Fecha {
 
     }
 
-    // Hola Github
+    // cada año tiene 365 días, si es bisiesto tiene 366 días, tenemos que tomar en cuenta
+    //que no todos los meses tiene dias iguales
+    
+    public int diasTranscurridos(){
+
+        int añosTranscurridos, diasTranscurridos, diasAño;
+
+        diasAño = 0;
+
+        añosTranscurridos = (getAño() - 1) - 1900;
+
+        for(int i = 0; i <= añosTranscurridos; i++){
+
+            if(isAñoBisiesto(i)){
+                diasAño = diasAño + 366;
+            }
+            else diasAño = diasAño + 365;
+        }
+
+        diasTranscurridos = diasAño;
+
+        return diasTranscurridos;
+
+    }
     
     public boolean bisiesto(){
         
@@ -72,6 +95,11 @@ public class Fecha {
         return isBisiesto;
     } 
 
+    public boolean isAñoBisiesto(int año){
+
+        return año % 4 == 0 ? true : false;
+
+    }
     //Hola mundo
 
     public int diasMes(int mesDelAño){
